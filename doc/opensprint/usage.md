@@ -24,9 +24,9 @@ A **manifest** is a signed document identifying a particular named resource. It 
 Creating and pushing a Docker image:
 
 ```
-$> dist insert content1.tar
+$> dist put -t layer content1.tar
 # dbe80f010ab3c73df8f3f6a54e161eecdf561f4d
-$> dist insert content2.tar
+$> dist put -t layer content2.tar
 d37a5bcd9fb3b61675727ff0ae9db240ac520595
 $> dist pack -p -t image icecrime/my_image dbe80f010ab3c73df8f3f6a54e161eecdf561f4d d37a5bcd9fb3b61675727ff0ae9db240ac520595
 {
@@ -115,6 +115,8 @@ Usage: dist put [OPTIONS] [file]
 Put an object identified in local storage. Content will be read from stdin
 when a content <file> is not specified. The created object id will be printed
 to stdout.
+
+  -t,--type		Set the object type
 ```
 
 ## Open questions
